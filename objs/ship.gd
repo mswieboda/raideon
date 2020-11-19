@@ -16,6 +16,15 @@ func position_parts():
 		part_node.transform.origin = body_part - part_body
 
 func change_part(part: String, node: Spatial):
+	if part == "wing":
+		change_part("wing_left", node)
+
+		var node_flipped = node
+		# flip wing for right and add
+		# https://godotengine.org/qa/3953/want-flip-character-the-horizontal-axis-but-whats-the-best-way
+		change_part("wing_right", node_flipped)
+		return
+
 	$parts.remove_child($parts.get_node(part))
 	node.set_name(part)
 	$parts.add_child(node)
