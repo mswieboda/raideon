@@ -14,3 +14,9 @@ func position_parts():
 		var part_body = part_node.get_node("body").transform.origin
 
 		part_node.transform.origin = body_part - part_body
+
+func change_part(part: String, node: Spatial):
+	$parts.remove_child($parts.get_node(part))
+	node.set_name(part)
+	$parts.add_child(node)
+	position_parts()

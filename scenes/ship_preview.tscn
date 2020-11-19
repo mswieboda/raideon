@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://objs/ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ship_preview.gd" type="Script" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Camera
@@ -21,7 +22,8 @@ func _process(delta):
 	pass
 "
 
-[node name="space" type="Spatial"]
+[node name="ship_preview" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="ship" parent="." instance=ExtResource( 1 )]
 
@@ -29,5 +31,5 @@ func _process(delta):
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2555, 12.3528, 0 )
 
 [node name="camera" type="Camera" parent="."]
-transform = Transform( 0.43196, -0.450946, 0.781062, 0, 0.866025, 0.5, -0.901893, -0.21598, 0.374088, 7.54634, 6.29137, 0.910809 )
+transform = Transform( -1.62921e-07, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 8.14605e-08, -1.41094e-07, 9.55773, 3.65402, 0 )
 script = SubResource( 1 )
