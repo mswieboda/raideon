@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://objs/ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objs/ships/ship.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="space" type="Spatial"]
 
@@ -10,4 +29,5 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2555, 12.3528, 0 )
 
 [node name="camera" type="Camera" parent="."]
-transform = Transform( -0.558165, 0.414865, -0.718567, 0, 0.866025, 0.5, 0.82973, 0.279083, -0.483385, -7.68939, 6.29137, -4.69081 )
+transform = Transform( 0.43196, -0.450946, 0.781062, 0, 0.866025, 0.5, -0.901893, -0.21598, 0.374088, 7.54634, 6.29137, 0.910809 )
+script = SubResource( 1 )

@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objs/ships/wings/wing_left_basic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objs/ships/rears/rear_basic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objs/ships/cockpits/cockpit_basic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objs/ships/ship.gd" type="Script" id=4]
+[ext_resource path="res://objs/ships/bodies/body_large.tscn" type="PackedScene" id=5]
+
+[node name="ship" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="cockpit" parent="." instance=ExtResource( 3 )]
+
+[node name="body" parent="." instance=ExtResource( 5 )]
+
+[node name="rear" parent="." instance=ExtResource( 2 )]
+
+[node name="wing_left" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.469149, 0, -1.51825 )
