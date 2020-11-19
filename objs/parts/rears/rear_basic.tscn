@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objs/parts/part.gd" type="Script" id=1]
 
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.25
@@ -6,6 +8,8 @@ bottom_radius = 0.5
 height = 1.0
 
 [node name="rear" type="Spatial"]
+script = ExtResource( 1 )
+part_name = "Basic Rear"
 
 [node name="mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.5, 0, 0 )

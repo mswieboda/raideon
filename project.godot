@@ -19,6 +19,10 @@ config/name="raideon"
 run/main_scene="res://scenes/space.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Util="*res://globals/util.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

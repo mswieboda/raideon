@@ -59,7 +59,7 @@ margin_right = 82.0
 margin_bottom = 32.0
 text = "cockpit"
 
-[node name="bodyList" type="ItemList" parent="vbox"]
+[node name="body_list" type="ItemList" parent="vbox"]
 margin_top = 36.0
 margin_right = 82.0
 margin_bottom = 45.0
@@ -71,36 +71,33 @@ margin_right = 82.0
 margin_bottom = 63.0
 text = "cockpit"
 
-[node name="cockpitList" type="ItemList" parent="vbox"]
+[node name="cockpit_list" type="ItemList" parent="vbox"]
 margin_top = 67.0
 margin_right = 82.0
-margin_bottom = 130.0
-items = [ "foo", null, false, "bar", null, false, "test", null, false ]
+margin_bottom = 76.0
 auto_height = true
 
 [node name="wings" type="Label" parent="vbox"]
-margin_top = 134.0
+margin_top = 80.0
 margin_right = 82.0
-margin_bottom = 165.0
+margin_bottom = 111.0
 text = "wings
 "
 
-[node name="wingsList" type="ItemList" parent="vbox"]
-margin_top = 169.0
+[node name="wings_list" type="ItemList" parent="vbox"]
+margin_top = 115.0
 margin_right = 82.0
-margin_bottom = 232.0
-items = [ "foo", null, false, "bar", null, false, "test", null, false ]
+margin_bottom = 124.0
 auto_height = true
 
 [node name="rear" type="Label" parent="vbox"]
-margin_top = 236.0
+margin_top = 128.0
 margin_right = 82.0
-margin_bottom = 250.0
+margin_bottom = 142.0
 text = "rear"
 
-[node name="rearList" type="ItemList" parent="vbox"]
-margin_top = 254.0
+[node name="rear_list" type="ItemList" parent="vbox"]
+margin_top = 146.0
 margin_right = 82.0
-margin_bottom = 317.0
-items = [ "foo", null, false, "bar", null, false, "test", null, false ]
+margin_bottom = 155.0
 auto_height = true
