@@ -3,8 +3,9 @@
 [ext_resource path="res://objs/parts/bodies/body_basic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objs/parts/rears/rear_basic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objs/parts/cockpits/cockpit_basic.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objs/ship.gd" type="Script" id=4]
+[ext_resource path="res://objs/ship/ship.gd" type="Script" id=4]
 [ext_resource path="res://objs/parts/wings/wing_basic.tscn" type="PackedScene" id=7]
+
 
 [node name="ship" type="Spatial"]
 script = ExtResource( 4 )

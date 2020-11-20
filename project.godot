@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Util="*res://globals/util.gd"
+Line="*res://globals/line.gd"
 
 [rendering]
 
