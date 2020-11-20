@@ -80,24 +80,23 @@ auto_height = true
 [node name="wings" type="Label" parent="vbox"]
 margin_top = 80.0
 margin_right = 82.0
-margin_bottom = 111.0
-text = "wings
-"
+margin_bottom = 94.0
+text = "wings"
 
-[node name="wings_list" type="ItemList" parent="vbox"]
-margin_top = 115.0
+[node name="wing_list" type="ItemList" parent="vbox"]
+margin_top = 98.0
 margin_right = 82.0
-margin_bottom = 124.0
+margin_bottom = 107.0
 auto_height = true
 
 [node name="rear" type="Label" parent="vbox"]
-margin_top = 128.0
+margin_top = 111.0
 margin_right = 82.0
-margin_bottom = 142.0
+margin_bottom = 125.0
 text = "rear"
 
 [node name="rear_list" type="ItemList" parent="vbox"]
-margin_top = 146.0
+margin_top = 129.0
 margin_right = 82.0
-margin_bottom = 155.0
+margin_bottom = 138.0
 auto_height = true

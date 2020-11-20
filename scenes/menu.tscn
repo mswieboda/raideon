@@ -55,6 +55,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 2 )
 text = "radeon"
+color = Color( 1, 1, 1, 1 )
+hover_color = Color( 0, 1, 0, 1 )
 font_size = 69
 hoverable = false
 
@@ -66,7 +68,10 @@ margin_bottom = 140.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 4 )
 text = "chooser"
+color = Color( 1, 1, 1, 1 )
+hover_color = Color( 0, 1, 0, 1 )
 font_size = 33
+hoverable = true
 
 [node name="start" parent="vbox" instance=ExtResource( 1 )]
 margin_left = 73.0
@@ -76,7 +81,10 @@ margin_bottom = 188.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 6 )
 text = "start"
+color = Color( 1, 1, 1, 1 )
+hover_color = Color( 0, 1, 0, 1 )
 font_size = 33
+hoverable = true
 
 [node name="exit" parent="vbox" instance=ExtResource( 1 )]
 margin_left = 83.0
@@ -86,7 +94,10 @@ margin_bottom = 236.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 8 )
 text = "exit"
+color = Color( 1, 1, 1, 1 )
+hover_color = Color( 0, 1, 0, 1 )
 font_size = 33
+hoverable = true
 [connection signal="gui_input" from="vbox/chooser" to="." method="_on_chooser_gui_input"]
 [connection signal="gui_input" from="vbox/start" to="." method="_on_start_gui_input"]
 [connection signal="gui_input" from="vbox/exit" to="." method="_on_exit_gui_input"]
