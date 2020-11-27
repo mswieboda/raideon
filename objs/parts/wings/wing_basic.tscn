@@ -18,23 +18,25 @@ size = Vector3( 0.25, 0.25, 0.25 )
 script = ExtResource( 1 )
 part_name = "Wing Basic"
 
-[node name="mesh" type="Spatial" parent="."]
+[node name="part" type="Spatial" parent="."]
+
+[node name="mesh" type="Spatial" parent="part"]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 
-[node name="main_wing" type="MeshInstance" parent="mesh"]
+[node name="main_wing" type="MeshInstance" parent="part/mesh"]
 transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="start_edge" type="MeshInstance" parent="mesh"]
+[node name="start_edge" type="MeshInstance" parent="part/mesh"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386371, 0, 1.45075 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="body" type="Spatial" parent="."]
+[node name="body" type="Spatial" parent="part"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.3 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="MeshInstance" type="MeshInstance" parent="part"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124585, -0.0448426 )
 mesh = SubResource( 4 )
 material/0 = null

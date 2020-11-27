@@ -8,10 +8,6 @@
 script = ExtResource( 1 )
 part_name = "Basic Body"
 
-[node name="mesh" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
-
 [node name="cockpit" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 
@@ -23,3 +19,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 
 [node name="wing_right" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="part" type="Spatial" parent="."]
+
+[node name="mesh" type="MeshInstance" parent="part"]
+mesh = SubResource( 1 )
+material/0 = null

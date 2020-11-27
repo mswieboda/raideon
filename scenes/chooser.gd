@@ -26,7 +26,7 @@ func _ready():
 		for file in Util.get_files_in_directory(part_path):
 			var resource = load(part_path + file)
 			var node = resource.instance()
-			
+
 			if part_key == "wing":
 				part["resources"].append(resource)
 			else:
