@@ -7,7 +7,7 @@ size = Vector3( 2, 1.5, 5 )
 
 [node name="body" type="Spatial"]
 script = ExtResource( 1 )
-part_name = "Large Body"
+part_name = "Large"
 
 [node name="cockpit" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5 )

@@ -2,11 +2,11 @@
 
 [ext_resource path="res://objs/parts/part.gd" type="Script" id=1]
 
-[sub_resource type="PrismMesh" id=1]
+[sub_resource type="SphereMesh" id=1]
 
 [node name="cockpit" type="Spatial"]
 script = ExtResource( 1 )
-part_name = "Basic Cockpit"
+part_name = "Bubble"
 
 [node name="part" type="Spatial" parent="."]
 
