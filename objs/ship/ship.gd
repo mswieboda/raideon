@@ -1,8 +1,11 @@
 extends Spatial
 
+export var controlled = false
 
 func _ready():
 	change_part("body", preload("res://objs/parts/bodies/body_basic.tscn").instance())
+	change_part("cockpit", preload("res://objs/parts/cockpits/cockpit_bubble.tscn").instance())
+	change_part("rear", preload("res://objs/parts/rears/rear_double.tscn").instance())
 	change_wing(preload("res://objs/parts/wings/wing_basic.tscn"))
 	position_parts()
 
@@ -44,3 +47,8 @@ func change_wing(resource: PackedScene):
 func flip_wing(node: Spatial):
 	var part = node.get_node("part")
 	part.scale.x = -1
+
+
+func _physics_process(delta):
+	if controlled:
+		pass
