@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/ship_preview.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/chooser.gd" type="Script" id=2]
+[ext_resource path="res://scenes/chooser/ship_preview.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/chooser/chooser.gd" type="Script" id=2]
+
+
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
