@@ -6,8 +6,10 @@ const THROTTLE_UP = 10
 const THROTTLE_DOWN = 10
 const PITCH_MIN = 5
 const YAW_MIN = 5
-const PITCH_AMOUNT = 0.13
-const YAW_AMOUNT = 0.13
+const PITCH_MAX = 100
+const YAW_MAX = 100
+const PITCH_AMOUNT = 3
+const YAW_AMOUNT = 3
 const ROLL_AMOUNT = 69
 
 var throttle = 0
@@ -82,13 +84,11 @@ func movement(delta):
   # NOTE: Godot should rotate by x first, then y
   #       which is why yaw is rotated first here
   
-  rotate(Vector3(0, 1, 0), -yaw * delta)
+  rotate(Vector3(0, 1, 0), yaw * delta)
   rotate(Vector3(1, 0, 0), pitch * delta)
   rotate(Vector3(0, 0, 1), roll * delta)
   
   velocity = transform.basis.z * throttle
-  
-#  velocity = direction * throttle
   
   transform.orthonormalized()
   
@@ -99,6 +99,13 @@ func movement(delta):
   yaw = 0
   roll = 0
 
+
+func mouse_to_input(mouse_value: float, mouse_max: float):
+  if abs(mouse_value) >= mouse_max:
+    return 1 * sign(mouse_max)
+  else:
+    return mouse_value / mouse_max
+
 func _input(event):
   if !controlled:
     return
@@ -108,10 +115,11 @@ func _input(event):
     var y = event.relative.y
     
     if abs(y) > PITCH_MIN:
-      pitch = y * PITCH_AMOUNT
+      pitch = mouse_to_input(y, PITCH_MAX) * PITCH_AMOUNT
     
     if abs(x) > YAW_MIN:
-      yaw = x * YAW_AMOUNT
+      yaw = mouse_to_input(-x, YAW_MAX) * YAW_AMOUNT
+      
 
 func player_input(delta):
   # acceleration/deceleration
@@ -119,6 +127,15 @@ func player_input(delta):
     throttle += THROTTLE_UP * delta
   elif Input.is_action_pressed("throttle_down"):
     throttle -= THROTTLE_DOWN * delta
+    
+  var pitch_gamepad = Input.get_action_strength("pitch_up") - Input.get_action_strength("pitch_down")
+  var yaw_gamepad = Input.get_action_strength("yaw_left") - Input.get_action_strength("yaw_right")
+  
+  if abs(pitch_gamepad) > 0:
+    pitch = -pitch_gamepad * PITCH_AMOUNT
+  
+  if abs(yaw_gamepad) > 0:
+    yaw = yaw_gamepad * YAW_AMOUNT
   
   # roll (Q, E keys)
   if Input.is_action_pressed("roll_right"):

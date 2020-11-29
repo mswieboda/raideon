@@ -9,7 +9,6 @@
 
 [node name="cam_3p_static" type="Camera" parent="."]
 transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 19.646, -25.7821 )
-current = true
 
 [node name="ship" parent="." instance=ExtResource( 1 )]
 controlled = true
@@ -19,6 +18,8 @@ transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e
 
 [node name="cam_1p_follow" type="Camera" parent="ship"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 1.01 )
+current = true
+far = 1000.0
 
 [node name="hud" type="MarginContainer" parent="ship"]
 anchor_right = 1.0
