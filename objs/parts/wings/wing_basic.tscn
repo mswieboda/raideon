@@ -2,41 +2,41 @@
 
 [ext_resource path="res://objs/parts/part.gd" type="Script" id=1]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxMesh" id=1]
 size = Vector3( 1, 0.25, 3 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="BoxMesh" id=2]
 size = Vector3( 0.95, 0.24, 0.27 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="StandardMaterial3D" id=3]
 albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="PrismMesh" id=4]
 size = Vector3( 0.25, 0.25, 0.25 )
 
-[node name="wing" type="Spatial"]
+[node name="wing" type="Node3D"]
 script = ExtResource( 1 )
 part_name = "Basic"
 
-[node name="part" type="Spatial" parent="."]
+[node name="part" type="Node3D" parent="."]
 
-[node name="mesh" type="Spatial" parent="part"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+[node name="mesh" type="Node3D" parent="part"]
+transform = Transform3D( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
 
-[node name="main_wing" type="MeshInstance" parent="part/mesh"]
-transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0 )
+[node name="main_wing" type="MeshInstance3D" parent="part/mesh"]
+transform = Transform3D( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="start_edge" type="MeshInstance" parent="part/mesh"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386371, 0, 1.45075 )
+[node name="start_edge" type="MeshInstance3D" parent="part/mesh"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386371, 0, 1.45075 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="body" type="Spatial" parent="part"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.3 )
+[node name="body" type="Node3D" parent="part"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.3 )
 
-[node name="MeshInstance" type="MeshInstance" parent="part"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124585, -0.0448426 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124585, -0.0448426 )
 mesh = SubResource( 4 )
 material/0 = null

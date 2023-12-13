@@ -6,7 +6,7 @@
 
 
 [sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Viewport")
+viewport_path = NodePath("SubViewport")
 
 [node name="chooser" type="Control"]
 script = ExtResource( 2 )
@@ -14,17 +14,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2( 1024, 600 )
 handle_input_locally = false
 usage = 3
 render_target_update_mode = 3
 
-[node name="ship_preview" parent="Viewport" instance=ExtResource( 1 )]
+[node name="ship_preview" parent="SubViewport" instance=ExtResource( 1 )]
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -33,8 +33,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 600.0
+offset_right = 1024.0
+offset_bottom = 600.0
 texture = SubResource( 1 )
 expand = true
 stretch_mode = 4
@@ -44,61 +44,61 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="title" type="Label" parent="vbox"]
-margin_right = 82.0
-margin_bottom = 14.0
+offset_right = 82.0
+offset_bottom = 14.0
 text = "ship chooser"
 
 [node name="body" type="Label" parent="vbox"]
-margin_top = 18.0
-margin_right = 82.0
-margin_bottom = 32.0
+offset_top = 18.0
+offset_right = 82.0
+offset_bottom = 32.0
 text = "cockpit"
 
 [node name="body_list" type="ItemList" parent="vbox"]
-margin_top = 36.0
-margin_right = 82.0
-margin_bottom = 45.0
+offset_top = 36.0
+offset_right = 82.0
+offset_bottom = 45.0
 auto_height = true
 
 [node name="cockpits" type="Label" parent="vbox"]
-margin_top = 49.0
-margin_right = 82.0
-margin_bottom = 63.0
+offset_top = 49.0
+offset_right = 82.0
+offset_bottom = 63.0
 text = "cockpit"
 
 [node name="cockpit_list" type="ItemList" parent="vbox"]
-margin_top = 67.0
-margin_right = 82.0
-margin_bottom = 76.0
+offset_top = 67.0
+offset_right = 82.0
+offset_bottom = 76.0
 auto_height = true
 
 [node name="wings" type="Label" parent="vbox"]
-margin_top = 80.0
-margin_right = 82.0
-margin_bottom = 94.0
+offset_top = 80.0
+offset_right = 82.0
+offset_bottom = 94.0
 text = "wings"
 
 [node name="wing_list" type="ItemList" parent="vbox"]
-margin_top = 98.0
-margin_right = 82.0
-margin_bottom = 107.0
+offset_top = 98.0
+offset_right = 82.0
+offset_bottom = 107.0
 auto_height = true
 
 [node name="rear" type="Label" parent="vbox"]
-margin_top = 111.0
-margin_right = 82.0
-margin_bottom = 125.0
+offset_top = 111.0
+offset_right = 82.0
+offset_bottom = 125.0
 text = "rear"
 
 [node name="rear_list" type="ItemList" parent="vbox"]
-margin_top = 129.0
-margin_right = 82.0
-margin_bottom = 138.0
+offset_top = 129.0
+offset_right = 82.0
+offset_bottom = 138.0
 auto_height = true

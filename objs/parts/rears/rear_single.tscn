@@ -7,16 +7,16 @@ top_radius = 0.25
 bottom_radius = 0.5
 height = 1.0
 
-[node name="rear" type="Spatial"]
+[node name="rear" type="Node3D"]
 script = ExtResource( 1 )
 part_name = "Single"
 
-[node name="part" type="Spatial" parent="."]
+[node name="part" type="Node3D" parent="."]
 
-[node name="mesh" type="MeshInstance" parent="part"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+[node name="mesh" type="MeshInstance3D" parent="part"]
+transform = Transform3D( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="body" type="Spatial" parent="part"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+[node name="body" type="Node3D" parent="part"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )

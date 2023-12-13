@@ -11,13 +11,13 @@ var parts = {
 
 func _ready():
 # warning-ignore:return_value_discarded
-	$vbox/body_list.connect("item_selected", self, "_body_list_selected")
+	$vbox/body_list.connect("item_selected", Callable(self, "_body_list_selected"))
 # warning-ignore:return_value_discarded
-	$vbox/cockpit_list.connect("item_selected", self, "_cockpit_list_selected")
+	$vbox/cockpit_list.connect("item_selected", Callable(self, "_cockpit_list_selected"))
 # warning-ignore:return_value_discarded
-	$vbox/rear_list.connect("item_selected", self, "_rear_list_selected")
+	$vbox/rear_list.connect("item_selected", Callable(self, "_rear_list_selected"))
 # warning-ignore:return_value_discarded
-	$vbox/wing_list.connect("item_selected", self, "_wing_list_selected")
+	$vbox/wing_list.connect("item_selected", Callable(self, "_wing_list_selected"))
 
 	for part_key in parts:
 		var part = parts[part_key]
@@ -25,7 +25,7 @@ func _ready():
 
 		for file in Util.get_files_in_directory(part_path):
 			var resource = load(part_path + file)
-			var node = resource.instance()
+			var node = resource.instantiate()
 
 			if part_key == "wing":
 				part["resources"].append(resource)
@@ -36,7 +36,7 @@ func _ready():
 
 func list_selected(part_key: String, index: int):
 	var node = parts[part_key]["nodes"][index]
-	$Viewport/ship_preview/ship.change_part(part_key, node)
+	$SubViewport/ship_preview/ship.change_part(part_key, node)
 
 func _body_list_selected(index: int):
 	list_selected("body", index)
@@ -49,4 +49,4 @@ func _rear_list_selected(index: int):
 
 func _wing_list_selected(index: int):
 	var resource = parts["wing"]["resources"][index]
-	$Viewport/ship_preview/ship.change_wing(resource)
+	$SubViewport/ship_preview/ship.change_wing(resource)

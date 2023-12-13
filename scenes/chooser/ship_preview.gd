@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 const ROTATION_SPEED = 0.69
 

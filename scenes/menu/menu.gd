@@ -8,13 +8,13 @@ func _input(event: InputEvent):
 func _on_start_gui_input(event: InputEvent):
   if event.is_pressed():
 # warning-ignore:return_value_discarded
-    get_tree().change_scene("res://scenes/space/space.tscn")
+    get_tree().change_scene_to_file("res://scenes/space/space.tscn")
 
 
 func _on_chooser_gui_input(event: InputEvent):
   if event.is_pressed():
 # warning-ignore:return_value_discarded
-    get_tree().change_scene("res://scenes/chooser/chooser.tscn")
+    get_tree().change_scene_to_file("res://scenes/chooser/chooser.tscn")
 
 
 func _on_exit_gui_input(event: InputEvent):

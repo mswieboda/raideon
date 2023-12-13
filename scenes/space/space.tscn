@@ -5,19 +5,19 @@
 
 [sub_resource type="SphereMesh" id=1]
 
-[node name="space" type="Spatial"]
+[node name="space" type="Node3D"]
 
-[node name="cam_3p_static" type="Camera" parent="."]
-transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 19.646, -25.7821 )
+[node name="cam_3p_static" type="Camera3D" parent="."]
+transform = Transform3D( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 19.646, -25.7821 )
 
 [node name="ship" parent="." instance=ExtResource( 1 )]
 controlled = true
 
-[node name="cam_3p_follow" type="Camera" parent="ship"]
-transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 6, -9 )
+[node name="cam_3p_follow" type="Camera3D" parent="ship"]
+transform = Transform3D( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 6, -9 )
 
-[node name="cam_1p_follow" type="Camera" parent="ship"]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 1.01 )
+[node name="cam_1p_follow" type="Camera3D" parent="ship"]
+transform = Transform3D( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 1.01 )
 current = true
 far = 1000.0
 
@@ -30,42 +30,42 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="ship/hud"]
-margin_right = 1024.0
-margin_bottom = 600.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
 [node name="throttle" type="Label" parent="ship/hud/vbox"]
-margin_right = 1024.0
-margin_bottom = 14.0
+offset_right = 1024.0
+offset_bottom = 14.0
 
-[node name="refs" type="Spatial" parent="."]
+[node name="refs" type="Node3D" parent="."]
 
-[node name="Spatial" type="Spatial" parent="refs"]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, -20.7121, 16.2992, 26.7143 )
+[node name="Node3D" type="Node3D" parent="refs"]
+transform = Transform3D( 15, 0, 0, 0, 15, 0, 0, 0, 15, -20.7121, 16.2992, 26.7143 )
 
-[node name="MeshInstance" type="MeshInstance" parent="refs/Spatial"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="refs/Node3D"]
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Spatial3" type="Spatial" parent="refs"]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 19.9694, 0.831467, 26.7143 )
+[node name="Spatial3" type="Node3D" parent="refs"]
+transform = Transform3D( 15, 0, 0, 0, 15, 0, 0, 0, 15, 19.9694, 0.831467, 26.7143 )
 
-[node name="MeshInstance" type="MeshInstance" parent="refs/Spatial3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="refs/Spatial3"]
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Spatial4" type="Spatial" parent="refs"]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, -41.1536, 43.6023, -20.1474 )
+[node name="Spatial4" type="Node3D" parent="refs"]
+transform = Transform3D( 15, 0, 0, 0, 15, 0, 0, 0, 15, -41.1536, 43.6023, -20.1474 )
 
-[node name="MeshInstance" type="MeshInstance" parent="refs/Spatial4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="refs/Spatial4"]
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Spatial2" type="Spatial" parent="refs"]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 21.0748, -53.0564, -30.3881 )
+[node name="Spatial2" type="Node3D" parent="refs"]
+transform = Transform3D( 15, 0, 0, 0, 15, 0, 0, 0, 15, 21.0748, -53.0564, -30.3881 )
 
-[node name="MeshInstance" type="MeshInstance" parent="refs/Spatial2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="refs/Spatial2"]
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="star" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.89565, 0.44476, 0, -0.44476, 0.89565, 0, 46.6665, 47.4455 )
+[node name="star" type="DirectionalLight3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 0.89565, 0.44476, 0, -0.44476, 0.89565, 0, 46.6665, 47.4455 )

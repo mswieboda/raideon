@@ -1,0 +1,6 @@
+res://default_env.tres
+res://scenes/menu/menu.tscn
+res://globals/util.gd
+res://globals/line.gd
+res://objs/text/text.gd
+res://objs/ship/ship.gd

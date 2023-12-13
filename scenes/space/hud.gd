@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var ship: KinematicBody
+var ship: CharacterBody3D
 var throttle: Label
 
 # Called when the node enters the scene tree for the first time.

@@ -2,27 +2,27 @@
 
 [ext_resource path="res://objs/parts/part.gd" type="Script" id=1]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxMesh" id=1]
 size = Vector3( 2, 1.5, 5 )
 
-[node name="body" type="Spatial"]
+[node name="body" type="Node3D"]
 script = ExtResource( 1 )
 part_name = "Large"
 
-[node name="cockpit" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5 )
+[node name="cockpit" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5 )
 
-[node name="rear" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5 )
+[node name="rear" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5 )
 
-[node name="wing_left" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+[node name="wing_left" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 
-[node name="wing_right" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+[node name="wing_right" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
 
-[node name="part" type="Spatial" parent="."]
+[node name="part" type="Node3D" parent="."]
 
-[node name="mesh" type="MeshInstance" parent="part"]
+[node name="mesh" type="MeshInstance3D" parent="part"]
 mesh = SubResource( 1 )
 material/0 = null
